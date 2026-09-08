@@ -1,0 +1,44 @@
+{
+  "name": "dankosik-skills",
+  "displayName": "Dankosik Skills",
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "java-backend-skills",
+      "repository": "https://github.com/Dankosik/java-backend-skills",
+      "version": "1.0.0",
+      "sha": "c23766f92b257a215b7c7a49b41ba1dba3e4ae03",
+      "description": "Independent skills for idiomatic Java and Spring backend development.",
+      "displayName": "Java Backend Skills",
+      "skills": 15
+    },
+    {
+      "name": "fastify-backend-skills",
+      "repository": "https://github.com/Dankosik/fastify-backend-skills",
+      "version": "1.0.0",
+      "sha": "29cb6b239d837c5bb5033fa8da0b31e36428e0ad",
+      "description": "Independent skills for TypeScript and Fastify backend development.",
+      "displayName": "Fastify Backend Skills",
+      "skills": 15
+    },
+    {
+      "name": "golang-backend-skills",
+      "repository": "https://github.com/Dankosik/golang-backend-skills",
+      "version": "1.0.0",
+      "sha": "7f452d2f6e7b9a9abf29b0b9f1b43d0dce7b1e96",
+      "description": "Independent skills for idiomatic Go backend development.",
+      "displayName": "Go Backend Skills",
+      "skills": 16
+    },
+    {
+      "name": "rust-cli-skills",
+      "repository": "https://github.com/Dankosik/rust-cli-skills",
+      "version": "1.0.0",
+      "sha": "b8e34ef63a978cdd292c5b2d928dca2e7b962d27",
+      "description": "Independent skills for fast, resource-conscious Rust command-line utilities.",
+      "displayName": "Rust CLI Skills",
+      "skills": 16
+    }
+  ],
+  "description": "Independent Java, Fastify, Go, and Rust CLI skill packs, pinned to verified releases."
+}

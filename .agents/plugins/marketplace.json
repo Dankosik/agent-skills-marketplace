@@ -1,0 +1,64 @@
+{
+  "name": "dankosik-skills",
+  "interface": {
+    "displayName": "Dankosik Skills"
+  },
+  "plugins": [
+    {
+      "name": "java-backend-skills",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Dankosik/java-backend-skills.git",
+        "ref": "v1.0.0",
+        "sha": "c23766f92b257a215b7c7a49b41ba1dba3e4ae03"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "fastify-backend-skills",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Dankosik/fastify-backend-skills.git",
+        "ref": "v1.0.0",
+        "sha": "29cb6b239d837c5bb5033fa8da0b31e36428e0ad"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "golang-backend-skills",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Dankosik/golang-backend-skills.git",
+        "ref": "v1.0.0",
+        "sha": "7f452d2f6e7b9a9abf29b0b9f1b43d0dce7b1e96"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "rust-cli-skills",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Dankosik/rust-cli-skills.git",
+        "ref": "v1.0.0",
+        "sha": "b8e34ef63a978cdd292c5b2d928dca2e7b962d27"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
