@@ -66,6 +66,8 @@ gh skill install Dankosik/golang-backend-skills go-implement --pin v1.0.0 --agen
 `catalog.json` owns the pack versions and exact source SHAs. The Claude and
 Codex marketplace files are derived from it. Each pack releases independently.
 An optional `claudePath` selects a native Claude package inside its repository.
+An optional `codexPath` selects a native Codex package, including its host-specific
+MCP configuration. Both subdirectories are verified at the same immutable pin.
 After an upstream release, change the corresponding pin, run
 `python3 scripts/catalog.py sync`, and review the update. CI checks both catalog
 representations and the remote package identities.

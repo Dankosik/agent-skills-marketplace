@@ -42,10 +42,11 @@
     {
       "name": "super-review",
       "repository": "https://github.com/Dankosik/super-review",
-      "version": "2.0.0",
-      "sha": "6dab7ca760b53e72d449b17b8e2d2ab754d9ce87",
+      "version": "2.1.0",
+      "sha": "87e3252da85b0f5b52032c860371a5bf063cfe01",
       "description": "Independent readability and maintainability review for Go PRs, with native Claude Code and Codex adapters.",
-      "claudePath": "adapters/claude/plugin"
+      "claudePath": "adapters/claude/plugin",
+      "codexPath": "adapters/codex/super-review"
     }
   ],
   "description": "Focused engineering skill packs and Super Review, pinned to verified releases."

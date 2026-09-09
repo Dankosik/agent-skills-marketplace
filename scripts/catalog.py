@@ -33,7 +33,12 @@ def render(catalog):
                 raise ValueError("invalid Claude plugin subdirectory")
             claude_source = {"source": "git-subdir", "url": entry["repository"] + ".git", "path": claude_path, **pin}
         claude["plugins"].append({"name": entry["name"], "source": claude_source, "description": entry["description"], "category": "development"})
-        codex["plugins"].append({"name": entry["name"], "source": {"source": "url", "url": entry["repository"] + ".git", **pin}, "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}, "category": "Productivity"})
+        codex_source = {"source": "url", "url": entry["repository"] + ".git", **pin}
+        if codex_path := entry.get("codexPath"):
+            if not re.fullmatch(r"[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*", codex_path) or any(part in {".", ".."} for part in codex_path.split("/")):
+                raise ValueError("invalid Codex plugin subdirectory")
+            codex_source = {"source": "git-subdir", "url": entry["repository"] + ".git", "path": codex_path, **pin}
+        codex["plugins"].append({"name": entry["name"], "source": codex_source, "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}, "category": "Productivity"})
     return {".claude-plugin/marketplace.json": claude, ".agents/plugins/marketplace.json": codex}
 
 
@@ -64,6 +69,12 @@ def main():
                     native = json.load(response)
                 if native["name"] != entry["name"] or native["version"] != entry["version"]:
                     raise ValueError("remote Claude package identity mismatch: " + entry["name"])
+            if codex_path := entry.get("codexPath"):
+                url = "https://raw.githubusercontent.com/" + repo + "/" + entry["sha"] + "/" + codex_path + "/.codex-plugin/plugin.json"
+                with urllib.request.urlopen(url, timeout=30) as response:
+                    native = json.load(response)
+                if native["name"] != entry["name"] or native["version"] != entry["version"]:
+                    raise ValueError("remote Codex package identity mismatch: " + entry["name"])
     print(f"Validated {len(catalog['plugins'])} pinned plugins in both native catalogs")
 
 
