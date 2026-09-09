@@ -1,8 +1,9 @@
 # Dankosik Skills
 
-One author marketplace for four independent, versioned Agent Skills packs.
-The catalog points to immutable release commits; skill files stay in their own
-repositories. No MCP server, account integration, or custom installer is needed.
+One author marketplace for focused engineering skills and Super Review.
+The catalog points to immutable release commits; packages stay in their own
+repositories. The four language packs contain only skills. Super Review also
+includes a local source reader and uses your configured model and GitHub access.
 
 | Pack | Skills | Focus |
 | --- | ---: | --- |
@@ -10,6 +11,7 @@ repositories. No MCP server, account integration, or custom installer is needed.
 | [Fastify Backend Skills](https://github.com/Dankosik/fastify-backend-skills) | 15 | TypeScript and Fastify |
 | [Go Backend Skills](https://github.com/Dankosik/golang-backend-skills) | 16 | Go backend development |
 | [Rust CLI Skills](https://github.com/Dankosik/rust-cli-skills) | 16 | Rust command-line utilities |
+| [Super Review](https://github.com/Dankosik/super-review) | 1 | Go PR readability and maintainability |
 
 ## Claude Code
 
@@ -20,7 +22,9 @@ claude plugin install java-backend-skills@dankosik-skills
 
 Replace the plugin name with any pack in the table. Inside a session, use
 `/plugin marketplace add` and `/plugin install` instead. Native skills are
-namespaced, for example `/java-backend-skills:java-implement`.
+namespaced, for example `/java-backend-skills:java-implement`. Super Review uses
+`/super-review:review <PR URL>` and requires Node.js 20+, GitHub CLI, and working
+Claude Code model access.
 
 ## Codex
 
@@ -61,6 +65,7 @@ gh skill install Dankosik/golang-backend-skills go-implement --pin v1.0.0 --agen
 
 `catalog.json` owns the pack versions and exact source SHAs. The Claude and
 Codex marketplace files are derived from it. Each pack releases independently.
+An optional `claudePath` selects a native Claude package inside its repository.
 After an upstream release, change the corresponding pin, run
 `python3 scripts/catalog.py sync`, and review the update. CI checks both catalog
 representations and the remote package identities.

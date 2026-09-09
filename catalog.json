@@ -38,7 +38,15 @@
       "description": "Independent skills for fast, resource-conscious Rust command-line utilities.",
       "displayName": "Rust CLI Skills",
       "skills": 16
+    },
+    {
+      "name": "super-review",
+      "repository": "https://github.com/Dankosik/super-review",
+      "version": "1.1.0",
+      "sha": "3b3c951e2f23cb7baa551cdfe4d5f8ed100bbde2",
+      "description": "Independent readability and maintainability review for Go PRs, with native Claude Code and Codex adapters.",
+      "claudePath": "adapters/claude/plugin"
     }
   ],
-  "description": "Independent Java, Fastify, Go, and Rust CLI skill packs, pinned to verified releases."
+  "description": "Focused engineering skill packs and Super Review, pinned to verified releases."
 }

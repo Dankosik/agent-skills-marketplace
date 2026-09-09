@@ -27,7 +27,12 @@ def render(catalog):
         if not re.fullmatch(r"\d+\.\d+\.\d+", entry["version"]):
             raise ValueError("invalid package version")
         pin = {"ref": "v" + entry["version"], "sha": entry["sha"]}
-        claude["plugins"].append({"name": entry["name"], "source": {"source": "github", "repo": entry["repository"].removeprefix("https://github.com/"), **pin}, "description": entry["description"], "category": "development"})
+        claude_source = {"source": "github", "repo": entry["repository"].removeprefix("https://github.com/"), **pin}
+        if claude_path := entry.get("claudePath"):
+            if not re.fullmatch(r"[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*", claude_path) or any(part in {".", ".."} for part in claude_path.split("/")):
+                raise ValueError("invalid Claude plugin subdirectory")
+            claude_source = {"source": "git-subdir", "url": entry["repository"] + ".git", "path": claude_path, **pin}
+        claude["plugins"].append({"name": entry["name"], "source": claude_source, "description": entry["description"], "category": "development"})
         codex["plugins"].append({"name": entry["name"], "source": {"source": "url", "url": entry["repository"] + ".git", **pin}, "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}, "category": "Productivity"})
     return {".claude-plugin/marketplace.json": claude, ".agents/plugins/marketplace.json": codex}
 
@@ -53,6 +58,12 @@ def main():
                 package = json.load(response)
             if package["name"] != entry["name"] or package["version"] != entry["version"]:
                 raise ValueError("remote package identity mismatch: " + entry["name"])
+            if claude_path := entry.get("claudePath"):
+                url = "https://raw.githubusercontent.com/" + repo + "/" + entry["sha"] + "/" + claude_path + "/.claude-plugin/plugin.json"
+                with urllib.request.urlopen(url, timeout=30) as response:
+                    native = json.load(response)
+                if native["name"] != entry["name"] or native["version"] != entry["version"]:
+                    raise ValueError("remote Claude package identity mismatch: " + entry["name"])
     print(f"Validated {len(catalog['plugins'])} pinned plugins in both native catalogs")
 
 
