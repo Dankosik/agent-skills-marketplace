@@ -65,8 +65,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Dankosik/super-review.git",
-        "ref": "v1.1.0",
-        "sha": "3b3c951e2f23cb7baa551cdfe4d5f8ed100bbde2"
+        "ref": "v2.0.0",
+        "sha": "6dab7ca760b53e72d449b17b8e2d2ab754d9ce87"
       },
       "policy": {
         "installation": "AVAILABLE",

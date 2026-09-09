@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0
+
+- Update Super Review to 2.0.0: explicit smaller specialist models with the user-selected orchestrator preserved.
+- Keep every language skill-pack pin unchanged.
+
 ## 1.1.0
 
 - Add Super Review 1.1.0 with native Claude Code and Codex installation.
