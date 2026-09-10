@@ -42,9 +42,9 @@
     {
       "name": "super-review",
       "repository": "https://github.com/Dankosik/super-review",
-      "version": "2.1.0",
-      "sha": "87e3252da85b0f5b52032c860371a5bf063cfe01",
-      "description": "Independent readability and maintainability review for Go PRs, with native Claude Code and Codex adapters.",
+      "version": "2.2.0",
+      "sha": "40a83483a24bd5a0a62960dda6f284a424236a5a",
+      "description": "Independent readability and maintainability review for Go, TypeScript, and Rust PRs, with native Claude Code and Codex adapters.",
       "claudePath": "adapters/claude/plugin",
       "codexPath": "adapters/codex/super-review"
     }
