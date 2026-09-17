@@ -2,8 +2,8 @@
 
 One author marketplace for focused engineering skills and Super Review.
 The catalog points to immutable release commits; packages stay in their own
-repositories. The four language packs contain only skills. Super Review also
-includes a local source reader and uses your configured model and GitHub access.
+repositories. The four language packs contain only skills. Super Review uses
+native host tools plus your configured model and GitHub access.
 
 | Pack | Skills | Focus |
 | --- | ---: | --- |
@@ -11,7 +11,7 @@ includes a local source reader and uses your configured model and GitHub access.
 | [Fastify Backend Skills](https://github.com/Dankosik/fastify-backend-skills) | 15 | TypeScript and Fastify |
 | [Go Backend Skills](https://github.com/Dankosik/golang-backend-skills) | 16 | Go backend development |
 | [Rust CLI Skills](https://github.com/Dankosik/rust-cli-skills) | 16 | Rust command-line utilities |
-| [Super Review](https://github.com/Dankosik/super-review) | 1 | Go, TypeScript, and Rust PR readability and maintainability |
+| [Super Review](https://github.com/Dankosik/super-review) | 1 | Go, TypeScript, Rust, and Java readability and maintainability |
 
 ## Claude Code
 
