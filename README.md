@@ -35,7 +35,7 @@ codex plugin add rust-cli-skills@dankosik-skills
 
 The author marketplace is a selectable plugin source where supported. Start a
 new task after installing. Current verified command surfaces: Codex CLI 0.153.4
-and Claude Code 2.1.227. See each pack's distribution guide for update behavior.
+and Claude Code 2.1.280. See each pack's distribution guide for update behavior.
 
 ## Standalone skills and other clients
 
