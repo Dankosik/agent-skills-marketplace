@@ -56,8 +56,8 @@
         "source": "git-subdir",
         "url": "https://github.com/Dankosik/super-review.git",
         "path": "adapters/claude/plugin",
-        "ref": "v3.8.0",
-        "sha": "c1512cfe277cd25f71c568417b2802dda35e4242"
+        "ref": "v3.9.0",
+        "sha": "b2705a4f45763483c9b759bd9001d4a5c9f90b1c"
       },
       "description": "Independent readability and maintainability review for Go, TypeScript, Rust, and Java PRs or local source, with native Claude Code, Codex, and Cursor adapters.",
       "category": "development"
