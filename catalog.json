@@ -42,8 +42,8 @@
     {
       "name": "super-review",
       "repository": "https://github.com/Dankosik/super-review",
-      "version": "3.18.0",
-      "sha": "ea6d48e8b60926db02d0fba67733be50d6fa6cb3",
+      "version": "3.19.0",
+      "sha": "8c93b5b91f13b8f5c7fb109b31f93d9fb6d8da9e",
       "description": "Independent readability and maintainability review for Go, TypeScript, Rust, and Java PRs or local source, with native Claude Code, Codex, and Cursor adapters.",
       "claudePath": "adapters/claude/plugin",
       "codexPath": "adapters/codex/super-review"
