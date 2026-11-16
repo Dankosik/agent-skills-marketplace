@@ -66,8 +66,8 @@
         "source": "git-subdir",
         "url": "https://github.com/Dankosik/super-review.git",
         "path": "adapters/codex/super-review",
-        "ref": "v3.36.2",
-        "sha": "2b2a6bc172d8d943ad127f95c867f38800f86284"
+        "ref": "v3.36.3",
+        "sha": "a6fb51e324ce3fde89c6184022cb64ff4049ab68"
       },
       "policy": {
         "installation": "AVAILABLE",
